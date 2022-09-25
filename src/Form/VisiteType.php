@@ -3,12 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Visite;
+use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class VisiteType extends AbstractType
 {
