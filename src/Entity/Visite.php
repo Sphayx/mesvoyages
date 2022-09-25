@@ -81,12 +81,12 @@ class Visite
         return $this;
     }
 
-    public function getDatecreation(): ?\DateTimeInterface
+    public function getDateCreation(): ?\DateTimeInterface
     {
         return $this->datecreation;
     }
 
-    public function setDatecreation(?\DateTimeInterface $datecreation): self
+    public function setDateCreation(?\DateTimeInterface $datecreation): self
     {
         $this->datecreation = $datecreation;
 
