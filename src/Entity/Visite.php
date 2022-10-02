@@ -261,11 +261,12 @@ class Visite
                             ->atPath('imageFile')
                             ->addViolation();
                 }
-            }
-        }else{
+                else{
             $context->buildViolation("Ce nest pas une image")
                     ->atPath('imageFile')
                     ->addViolation();
+        }
+            }
         }
     }
 }

@@ -27,11 +27,12 @@ class VisiteValidationsTest extends KernelTestCase {
      * @param int $nbErreursAttendues
      * @param string $message
      */
-    public function assertErrors(Visite $visite, int $nbErreursAttendues){
+    public function assertErrors(Visite $visite, int $nbErreursAttendues, string $message=""){
         self::bootKernel();
         $validator = self::getContainer()->get(ValidatorInterface::class);
         $error = $validator->validate($visite);
-        $this->assertCount($nbErreursAttendues, $error);
+        $nbErreursObtenues = count($error);
+        $this->assertEquals($nbErreursAttendues, $nbErreursObtenues, $message);
     }
     
     public function testValidNoteVisite(){
