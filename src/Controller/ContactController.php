@@ -34,27 +34,24 @@ class ContactController extends AbstractController{
             'formcontact' => $formContact->createView()
         ]);
     }
-    /**
+        /**
      * Envoi de mail
      * @param MailerInterface $mailer
      * @param Contact $contact
      */
-     public function sendEmail(MailerInterface $mailer, Contact $contact)
-    {
+    public function sendEmail(MailerInterface $mailer, Contact $contact){
         $email = (new Email())
             ->from($contact->getEmail())
             ->to('testbddbdd@gmail.com')
             ->subject('Message du site de voyages')
             ->html($this->renderView(
-                    'pages/_email.html.twig',[
+                    'pages/_email.html.twig', [
                         'contact' => $contact
                     ]
-            ),
-                    'utf-8'
-                    )
-                ;
+                ),
+                'utf-8'
+            )
+        ;
         $mailer->send($email);
-
-        // ...
     }
 }
